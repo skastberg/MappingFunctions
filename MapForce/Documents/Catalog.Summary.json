@@ -1,0 +1,19 @@
+{
+    "summary": [
+        {
+            "genre": "romance",
+            "count": 3,
+            "shelf": "A2"
+        },
+        {
+            "genre": "Science Fiction",
+            "count": 2,
+            "shelf": "B3"
+        },
+        {
+            "genre": "Computer",
+            "count": 12,
+            "shelf": "A1"
+        }
+    ]
+}

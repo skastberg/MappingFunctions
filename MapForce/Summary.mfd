@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="25">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties AppName="SummaryValueMap" SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="value-map" library="core" uid="17" kind="23">
+					<sources>
+						<datapoint pos="0" key="13"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="14"/>
+					</targets>
+					<view ltx="782" lty="35" rbx="862" rby="73"/>
+					<data>
+						<valuemap enableDefaultValue="1">
+							<valuemapTable>
+								<entry from="Science Fiction" to="A32"/>
+								<entry from="Romance" to="C1"/>
+								<entry from="Computer" to="A1"/>
+							</valuemapTable>
+							<input name="input" type="string"/>
+							<result name="result" type="string" defaultValue="Unknown"/>
+						</valuemap>
+					</data>
+				</component>
+				<component name="Summary" library="json" uid="3" kind="31">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="966" lty="35" rbx="1343" rby="380"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="root" expanded="1">
+										<entry name="object" expanded="1">
+											<entry name="summary" type="json-property" expanded="1">
+												<entry name="array" expanded="1">
+													<entry name="item" type="json-item" expanded="1">
+														<entry name="object" inpkey="1" expanded="1">
+															<entry name="genre" type="json-property" expanded="1">
+																<entry name="string" inpkey="2"/>
+															</entry>
+															<entry name="count" type="json-property" expanded="1">
+																<entry name="number" inpkey="3"/>
+															</entry>
+															<entry name="shelf" type="json-property" expanded="1">
+																<entry name="string" inpkey="4"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<json schema="..\Catalog.Summary.Schema.json" inputinstance="..\Catalog.Summary.json" outputinstance="..\Catalog.Summary.json"/>
+					</data>
+				</component>
+				<component name="group-by" library="core" uid="9" kind="5">
+					<sources>
+						<datapoint pos="0" key="9"/>
+						<datapoint pos="1" key="10"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="11"/>
+						<datapoint pos="1" key="12"/>
+					</targets>
+					<view ltx="537" lty="64" rbx="655" rby="118"/>
+				</component>
+				<component name="Catalog" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view rbx="304" rby="316"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace uid="https://bookstore.com/catalog"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="catalog" expanded="1">
+										<entry name="book" outkey="7" expanded="1">
+											<entry name="genre" outkey="8"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="..\bookstore_com_catalog.xsd" instanceroot="{https://bookstore.com/catalog}catalog" inputinstance="..\Books.xml" outputinstance="..\Books.xml"/>
+					</data>
+				</component>
+				<component name="count" library="core" uid="11" kind="5">
+					<sources>
+						<datapoint/>
+						<datapoint pos="1" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="590" lty="184" rbx="715" rby="238"/>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="11">
+						<edges>
+							<edge vertexkey="1"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="12">
+						<edges>
+							<edge vertexkey="2"/>
+							<edge vertexkey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="3"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="14">
+						<edges>
+							<edge vertexkey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="5"/>
+							<edge vertexkey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="9"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

@@ -1,0 +1,67 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{D3CD1858-ACAD-4D42-96BC-A5ECF63C3217}</ProjectGuid>
+		<OutputType>Exe</OutputType>
+		<TargetFramework Condition=" '$(TargetFramework)' == '' ">netcoreapp3.1</TargetFramework>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<Authors>Altova</Authors>
+		<Product>Altova MapForce 2021r3</Product>
+		<AssemblyName>Catalog</AssemblyName>
+		<RootNamespace>Catalog</RootNamespace>
+		<AssemblyCulture></AssemblyCulture>
+	</PropertyGroup>
+
+	<ItemGroup>
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Altova\Altova.csproj" />
+		<ProjectReference Include="..\AltovaXML\AltovaXML.csproj" />
+		<ProjectReference Include="..\AltovaFunctions\AltovaFunctions.csproj" />
+		<ProjectReference Include="..\AltovaText\AltovaText.csproj" />
+		<ProjectReference Include="..\bookstore_com_catalog\bookstore_com_catalog.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	</ItemGroup>
+
+<!--
+	<ItemGroup>
+		<Compile Include="CatalogConsole.cs"/>
+		<Compile Include="MapForceJsonLibs_Summary.cs"/>
+		<Compile Include="MapForceJsonLibs_Shelfs.cs"/>
+
+		<Compile Include="SummaryValueMapMapToSummary.cs"/>
+		<Compile Include="vmf_vmf1_inputtoresult.cs"/>
+		<Compile Include="SummaryLookupMapToCatalog_Summary_Schema.cs"/>
+	</ItemGroup>
+-->
+
+	<ItemGroup>
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  MapForce Project File  -->
+<Project Expanded="Yes" Type="Root" language="cs" OutputDir="outputWrapper\" Title="Catalog" OutputName="Catalog" Version="6">
+	<Folder FolderName="Mapping Folder" Expanded="Yes" Type="MappingFolder">
+		<File Type="Mapping" FilePath="Summary.mfd"/>
+		<File Type="Mapping" FilePath="SummaryAdvanced.mfd"/>
+	</Folder>
+</Project>
