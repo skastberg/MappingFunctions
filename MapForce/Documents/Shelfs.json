@@ -1,0 +1,30 @@
+[
+    {
+        "category": "Romance",
+        "shelf": "A1"
+    },
+    {
+        "category": "Horror",
+        "shelf": "A2"
+    },
+    {
+        "category": "Computer",
+        "shelf": "A3"
+    },
+    {
+        "category": "Science Fiction",
+        "shelf": "A4"
+    },
+    {
+        "category": "Math",
+        "shelf": "A5"
+    },
+    {
+        "category": "Crime",
+        "shelf": "A6"
+    },
+    {
+        "category": "Fantasy",
+        "shelf": "A7"
+    }
+]

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2021r3 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="25">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties AppName="SummaryLookup" SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="Catalog.Summary.Schema" library="json" uid="6" kind="31">
+					<properties XSLTTargetEncoding="UTF-8" XSLTDefaultOutput="1"/>
+					<view ltx="805" lty="-11" rbx="1045" rby="189"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="root" expanded="1">
+										<entry name="object" inpkey="15" expanded="1">
+											<entry name="summary" type="json-property" expanded="1">
+												<entry name="array" inpkey="16" expanded="1">
+													<entry name="item" type="json-item" expanded="1">
+														<entry name="object" inpkey="9" expanded="1">
+															<entry name="genre" type="json-property" expanded="1">
+																<entry name="string" inpkey="10"/>
+															</entry>
+															<entry name="count" type="json-property" expanded="1">
+																<entry name="number" inpkey="11"/>
+															</entry>
+															<entry name="shelf" type="json-property" expanded="1">
+																<entry name="string" inpkey="12"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<json schema="..\Catalog.Summary.Schema.json" inputinstance="..\Catalog.Summary.json" outputinstance="..\Catalog.Summary.json"/>
+					</data>
+				</component>
+				<component name="Catalog" library="xml" uid="2" kind="14">
+					<properties XSLTTargetEncoding="UTF-8" SaveRelativePaths="0"/>
+					<view ltx="25" lty="-11" rbx="233" rby="213"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace uid="https://bookstore.com/catalog"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" outkey="17" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="catalog" outkey="18" expanded="1">
+										<entry name="book" outkey="1" expanded="1">
+											<entry name="genre" outkey="2"/>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="C:\TransformMapforce\bookstore_com_catalog.xsd" instanceroot="{https://bookstore.com/catalog}catalog" inputinstance="C:\TransformMapforce\Books.xml" outputinstance="C:\TransformMapforce\Books.xml"/>
+					</data>
+				</component>
+				<component name="count" library="core" uid="10" kind="5">
+					<sources>
+						<datapoint/>
+						<datapoint pos="1" key="8"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="402" lty="260" rbx="527" rby="314"/>
+				</component>
+				<component name="group-by" library="core" uid="9" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+						<datapoint pos="1" key="3"/>
+					</targets>
+					<view ltx="402" lty="141" rbx="520" rby="195"/>
+				</component>
+				<component name="LookupShelf" library="user" uid="29" kind="19" visible="0" blackbox="0">
+					<view ltx="402" lty="59" rbx="550" rby="76"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="CategoryName" inpkey="13" componentid="24"/>
+						</root>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+								</namespaces>
+							</header>
+							<entry name="Shelf" outkey="14" componentid="22"/>
+						</root>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="5"/>
+							<edge vertexkey="8"/>
+							<edge vertexkey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="9"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="10"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="14">
+						<edges>
+							<edge vertexkey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="17">
+						<edges>
+							<edge vertexkey="15"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="18">
+						<edges>
+							<edge vertexkey="16"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+	<component name="LookupShelf" library="user" uid="21" inline="1" editable="1" blackbox="0">
+		<structure>
+			<children>
+				<component name="CategoryName" library="core" uid="24" kind="6">
+					<sources>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="124" lty="72" rbx="256" rby="110"/>
+					<data>
+						<input datatype="string"/>
+						<parameter usageKind="input" name="CategoryName"/>
+					</data>
+				</component>
+				<component name="Shelfs" library="json" uid="23" kind="31">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="74" lty="159" rbx="287" rby="335"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="root" expanded="1">
+										<entry name="array" expanded="1">
+											<entry name="item" type="json-item" expanded="1">
+												<entry name="object" expanded="1">
+													<entry name="category" type="json-property" expanded="1">
+														<entry name="string" outkey="2"/>
+													</entry>
+													<entry name="shelf" type="json-property" expanded="1">
+														<entry name="string" outkey="3"/>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<json schema="..\Shelfs.schema.json" inputinstance="..\Shelfs.json" outputinstance="..\Shelfs.json"/>
+					</data>
+				</component>
+				<component name="equal" library="core" uid="26" kind="5">
+					<sources>
+						<datapoint pos="0" key="4"/>
+						<datapoint pos="1" key="5"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="379" lty="72" rbx="435" rby="126"/>
+				</component>
+				<component name="shelf" library="core" uid="27" kind="3">
+					<sources>
+						<datapoint pos="0" key="7"/>
+						<datapoint pos="1" key="8"/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="9"/>
+						<datapoint/>
+					</targets>
+					<view ltx="508" lty="72" rbx="621" rby="126"/>
+				</component>
+				<component name="Shelf" library="core" uid="22" kind="7">
+					<sources>
+						<datapoint pos="0" key="10"/>
+					</sources>
+					<view ltx="689" lty="72" rbx="743" rby="110"/>
+					<data>
+						<output datatype="string"/>
+						<parameter usageKind="output" name="Shelf"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="4"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="5"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="7"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="8"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="10"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

@@ -1,0 +1,52 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{03AAA791-EC2D-4A90-ABBF-45337E52DFD6}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<TargetFramework Condition=" '$(TargetFramework)' == '' ">netcoreapp3.1</TargetFramework>
+		<!--<TargetFramework>netstandard2.0</TargetFramework>-->
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<Authors>Altova</Authors>
+		<Product>Altova MapForce 2021r3</Product>
+		<AssemblyName>AltovaXML</AssemblyName>
+		<RootNamespace>Altova</RootNamespace>
+		<AssemblyCulture></AssemblyCulture>
+	</PropertyGroup>
+
+	<!--
+	<ItemGroup>
+		<Reference Include="System.Web" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+	-->
+
+	<ItemGroup>
+		<PackageReference Include="System.IO.Packaging" Version="5.*" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Altova\Altova.csproj" />
+	</ItemGroup>
+</Project>

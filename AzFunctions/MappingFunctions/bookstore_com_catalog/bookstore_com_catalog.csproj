@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+		<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+		<ProjectGuid>{113EB8B4-237E-2C4A-90C6-6A3CEB33BE9E}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<TargetFramework Condition=" '$(TargetFramework)' == '' ">netcoreapp3.1</TargetFramework>
+		<!--<TargetFramework>netstandard2.0</TargetFramework>-->
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+		<GenerateRuntimeConfigurationFiles>true</GenerateRuntimeConfigurationFiles>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\Debug\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+	
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+		<Optimize>true</Optimize>
+		<OutputPath>bin\Release\</OutputPath>
+		<DefineConstants>TRACE</DefineConstants>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Version>1.0.0</Version>
+		<Authors>Altova</Authors>
+		<Product>Altova MapForce 2021r3</Product>
+		<AssemblyName>bookstore_com_catalog</AssemblyName>
+		<RootNamespace>bookstore_com_catalog</RootNamespace>
+		<AssemblyCulture></AssemblyCulture>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\AltovaXML\AltovaXML.csproj" />
+		<ProjectReference Include="..\Altova\Altova.csproj" />
+	</ItemGroup>
+
+</Project>
